@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frames Frames — Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg: #1a0a4a;
+      --bg2: #2d0f7a;
+      --accent-cyan: #00e5ff;
+      --accent-pink: #ff4da6;
+      --accent-purple: #b36aff;
+      --text: #f0e8ff;
+      --card-bg: rgba(255,255,255,0.04);
+    }
+ 
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+ 
+    /* Animated background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.25;
+      animation: drift 10s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #7b2ff7, transparent);
+      top: -100px; left: -100px;
+    }
+    body::after {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, #ff4da6, transparent);
+      bottom: -80px; right: -80px;
+      animation-delay: -5s;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.1); }
+    }
+ 
+    /* Card */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 320px;
+      background: linear-gradient(160deg, rgba(80,30,180,0.55), rgba(30,5,80,0.75));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(179,106,255,0.25);
+      border-radius: 32px;
+      padding: 48px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 30px 80px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      animation: cardIn 0.8s cubic-bezier(.22,1,.36,1) both;
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+ 
+    /* Necklace lines */
+    .necklace {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.35));
+    }
+    .necklace::before, .necklace::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 55px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2));
+    }
+    .necklace::before { left: -14px; transform: rotate(-6deg); transform-origin: top; }
+    .necklace::after  { left: 14px;  transform: rotate(6deg);  transform-origin: top; }
+ 
+    /* Avatar */
+    .avatar-wrap {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      margin-top: 12px;
+    }
+    .avatar-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--accent-cyan), var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+      animation: spin 4s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-ring-mask {
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--bg);
+      z-index: 1;
+    }
+    .avatar {
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+      /* Placeholder gradient as avatar */
+      background: linear-gradient(135deg, #ff6eb4 0%, #ffd36b 30%, #6be7ff 60%, #b36aff 100%);
+    }
+ 
+    /* Name & bio */
+    .name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.55rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #fff 30%, var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeUp 0.7s 0.3s both;
+    }
+    .bio {
+      font-size: 0.88rem;
+      color: rgba(220,200,255,0.75);
+      text-align: center;
+      line-height: 1.6;
+      animation: fadeUp 0.7s 0.45s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple));
+      border-radius: 2px;
+      animation: fadeUp 0.7s 0.55s both;
+    }
+ 
+    /* Buttons */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      animation: fadeUp 0.7s 0.65s both;
+    }
+ 
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.25s;
+      border-radius: inherit;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn:hover::before { opacity: 1; }
+    .btn:active { transform: translateY(0) scale(0.97); }
+ 
+    /* LinkedIn */
+    .btn-linkedin {
+      background: transparent;
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 14px rgba(0,229,255,0.2), inset 0 0 0 0 rgba(0,229,255,0);
+    }
+    .btn-linkedin::before {
+      background: rgba(0,229,255,0.1);
+    }
+    .btn-linkedin:hover {
+      box-shadow: 0 0 28px rgba(0,229,255,0.45), inset 0 0 14px rgba(0,229,255,0.08);
+      color: #fff;
+      border-color: #fff;
+    }
+ 
+    /* Instagram */
+    .btn-instagram {
+      background: transparent;
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+      box-shadow: 0 0 14px rgba(255,77,166,0.2);
+    }
+    .btn-instagram::before {
+      background: rgba(255,77,166,0.1);
+    }
+    .btn-instagram:hover {
+      box-shadow: 0 0 28px rgba(255,77,166,0.45), inset 0 0 14px rgba(255,77,166,0.08);
+      color: #fff;
+      border-color: #fff;
+    }
+ 
+    /* Icon inside button */
+    .btn svg {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      fill: currentColor;
+    }
+ 
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float var(--dur) var(--delay) ease-in-out infinite;
+    }
+    @keyframes float {
+      0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+      20%  { opacity: 0.6; }
+      80%  { opacity: 0.4; }
+      100% { opacity: 0; transform: translateY(-120px) scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+ 
+  <!-- Card -->
+  <div class="card">
+    <div class="necklace"></div>
+ 
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-ring-mask"></div>
+      <div class="avatar" id="avatarEl"></div>
+    </div>
+ 
+    <h1 class="name">Frames Frames</h1>
+ 
+    <p class="bio">Estudante de Front‑End,<br>ADS e UX</p>
+ 
+    <div class="divider"></div>
+ 
+    <div class="links">
+      <a class="btn btn-linkedin" href="https://linkedin.com" target="_blank" rel="noopener">
+        <!-- LinkedIn icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/>
+        </svg>
+        LinkedIn
+      </a>
+ 
+      <a class="btn btn-instagram" href="https://instagram.com" target="_blank" rel="noopener">
+        <!-- Instagram icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.585-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.308-.974-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.413 2.105 8.793 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.053.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.856.601 3.698 1.942 5.039 1.341 1.341 3.183 1.857 5.039 1.942C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.856-.085 3.698-.601 5.039-1.942 1.341-1.341 1.857-3.183 1.942-5.039.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.085-1.857-.601-3.699-1.942-5.04C20.698.673 18.856.157 17 .072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+ 
+  <script>
+    // --- Floating particles ---
+    const container = document.getElementById('particles');
+    const colors = ['#00e5ff','#ff4da6','#b36aff','#ffffff'];
+    for (let i = 0; i < 22; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 5 + 2;
+      p.style.cssText = `
+        width:${size}px; height:${size}px;
+        left:${Math.random()*100}%;
+        top:${50 + Math.random()*50}%;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        --dur:${4 + Math.random()*5}s;
+        --delay:${Math.random()*6}s;
+      `;
+      container.appendChild(p);
+    }
+ 
+    // --- Avatar: painted texture via canvas ---
+    (function paintAvatar() {
+      const el = document.getElementById('avatarEl');
+      const size = 122;
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = size;
+      const ctx = canvas.getContext('2d');
+ 
+      // Base gradient
+      const g = ctx.createLinearGradient(0, 0, size, size);
+      g.addColorStop(0,   '#ff6eb4');
+      g.addColorStop(0.3, '#ffd36b');
+      g.addColorStop(0.6, '#6be7ff');
+      g.addColorStop(1,   '#b36aff');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, size, size);
+ 
+      // Paint strokes
+      const strokes = [
+        { c: '#e63950', x: 20, y: 10, w: 30, h: 80 },
+        { c: '#fff176', x: 55, y: 5,  w: 20, h: 60 },
+        { c: '#40c4ff', x: 70, y: 30, w: 35, h: 70 },
+        { c: '#ff80ab', x: 10, y: 60, w: 45, h: 50 },
+        { c: '#b388ff', x: 80, y: 10, w: 25, h: 55 },
+        { c: '#a5d6a7', x: 30, y: 40, w: 20, h: 70 },
+      ];
+      strokes.forEach(s => {
+        ctx.save();
+        ctx.globalAlpha = 0.55;
+        ctx.fillStyle = s.c;
+        ctx.beginPath();
+        ctx.ellipse(s.x + s.w/2, s.y + s.h/2, s.w/2, s.h/2, Math.random()*Math.PI, 0, Math.PI*2);
+        ctx.fill();
+        ctx.restore();
+      });
+ 
+      // Clip to circle and apply
+      const finalCanvas = document.createElement('canvas');
+      finalCanvas.width = finalCanvas.height = size;
+      const fc = finalCanvas.getContext('2d');
+      fc.beginPath();
+      fc.arc(size/2, size/2, size/2, 0, Math.PI*2);
+      fc.clip();
+      fc.drawImage(canvas, 0, 0);
+ 
+      el.style.backgroundImage = `url(${finalCanvas.toDataURL()})`;
+      el.style.backgroundSize = 'cover';
+    })();
+ 
+    // --- Tilt effect on card ---
+    const card = document.querySelector('.card');
+    document.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
+      const maxTilt = 8;
+      card.style.transform = `rotateY(${dx * maxTilt}deg) rotateX(${-dy * maxTilt}deg)`;
+    });
+    document.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.5s ease';
+    });
+    document.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.05s linear';
+    });
+  </script>
+</body>
+</html>

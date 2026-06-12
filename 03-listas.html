@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhecendo listas HTML</title>
+</head>
+
+<body>
+   
+    <h1>Etendendo as listas do HTML</h1>
+<p>A listas no HTML, servem para organizar 
+<strong>informações relacionadas</strong> de
+forma estruturada e <em>semântica.</em></p>
+
+<p>As listas são compostas por elemento chamados de LI.</p> 
+    <p>Os LI (list item/Item da lista). As listas não possuem limite de itens. </p>
+
+<hr>
+
+<h2>Orderede List - OL</h2>
+<p>O elemento OL serve para criarmos uma lista ordenada, ou seja, com ordem, importância.</p>
+<p>Normalmente aparece numerada.</p>
+
+<h3>Preparando um bolo</h3>
+<ol>
+    <li>Separe os ingredientes</li>
+    <li>Juntar cada ingrediente</li>
+    <li>Levar ao forno</li>
+</ol>
+<p>Veja que não podemos assar a massa, sem antes preparar os ingredientes, então, a numeração segue uma lógica de importância.</p>
+
+<p>Também conseguimos usar o "type" para mudar a configuração do estilo da contagem.</p> 
+
+<ol type="i">
+    <li>Comprar</li>
+    <li>Organizar</li>
+    <li>Assar</li>
+</ol>
+
+<p>Além disso, pode-se implementar "start" e "reversed".</p>
+
+<hr>
+
+<h2>Unordered List</h2>
+<P>Serve para criar listas sem ordem específica. Normalmente aparece com bolinhas (bullets)</P>
+
+<h3>Exemplo rápido</h3>
+<ul>
+    <li>Comprar o fermento</li>
+    <li>Comprar ovos</li>
+    <li>Comprar farinha</li>
+</ul>
+
+<p>Veja que a ordem das compras não importa, ou seja, tanto faz iniciar comprando o fermento, ou a farinha.</p>
+
+<h3>Curiosidade importante</h3>
+<p>Você pode colocar listas dentro de listas</p>
+
+<h4>Ex. Listas dentro de listas</h4>
+<ul>
+    <li>Front enfatizado
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </li>
+</ul>
+<p>Nesse exemplo usamos o UL para representar, uma sub lista dentro de um dos itens da lista.</p>
+
+
+<h4>Exemplo 2</h4>
+<ol>
+<li>Comprar ingredientes
+<ul>
+    <li>Farinha</li>
+    <li>ovos</li>
+    <li>Leite</li>
+</ul>
+</li>
+
+<li>Preparar a massa</li>
+<li>Assar o bolo</li>
+</ol>
+
+<p>Nesse ex, usamos uma lista não ordenada (UL) dentro de uma lista ordenada(OL), assim, vemos que pode-se utilizar os elemnetos dessa forma, ou seguindo a lógica apresentada,</p>
+
+<hr>
+
+<h2>Description List - DL</h2>
+<p>O elemento DL é usado para criar uma lista de definição no HTML. 
+    <br>
+    Podemos usar em: Perguntas e respostas, termos...
+</p>
+
+<h3>Exemplo de aplicação</h3>
+<dl>
+<dt>Quem escreveu o livro "As crônicas de Nánia?</dt>
+<dd>O livro foi escrito pelo autor CS. Lews.</dd>
+<br>
+<dt>Qual o primeiro livro do volume único?</dt>
+<dd>O primeiro livro é "O sobrinho do mago".</dd>
+</dl>
+<!-- Para usar o elemento "DT" precisamos seguir uma ordem de estrutura, onde o dl é a estrutura, o dt é a descrição do termo, palavra ou titulo a ser explicado e o dd é a resposta ou definição do termo apresentado. -->
+
+<hr>
+
+<h2>data List Element - datalist</h2>
+<p>Esse elemento fornece sugestões de autocompletar para um campo de input,  exibindo as opções como sugestões enquanto o usuário digita.</p>
+
+<h3>Exemplo de aplicação.</h3>
+<input list="frutas" placeholder="Digite uma fruta...">
+
+<datalist id="frutas">
+  <option value="Maçã">
+  <option value="Banana">
+  <option value="Manga">
+  <option value="Morango">
+</datalist>
+
+
+
+
+
+
+
+</body>
+</html>

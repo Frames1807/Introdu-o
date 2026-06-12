@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com links</title>
+</head>
+
+<body>
+   <h1>Conhecendo o elemento de navegação</h1> 
+<hr>
+<h2>Elemento "a"</h2>
+<p>Um link é um elemento que permite navegar de uma <strong>página</strong>,
+ <strong>documento</strong> ou <strong>recursos</strong> para outro.</p>
+
+ <p>No html, a gente usa os links para:</p>
+ <ul>
+<li>Abrir um site <em>externo</em>.</li>
+<li>Levar o usuário para outra página do site.</li>
+<li>Abrir aplicativos com e-mail e telefones.</li>
+ </ul>
+
+<h2>Conhecendo o elemento "a"</h2>
+<p>O elemento usado para criar links é a tag "a" (anchor)</p>
+
+<p><b>href</b> - hyperText Reference</p>
+<p><b>target</b> - É um atributo que define onde o conteúdo do link será aberto. E nele informamos a função especifica. Veja algumas delas a seguir: </p>
+
+<ul>
+<li><string>Blank:</string> explicação...  </li>
+<li><string>Self:</string>  </li>
+<li><string>parent:</string>  </li>
+<li><string>Top:</string>  </li>
+
+</ul>
+
+<!-- Diferença entre "blank", "self", "parent" e "top" em target. "blank" o alvo dele será abrir uma nova aba para exibir o conteúdo, e o "self" é o valor padrão do navegador, onde o conteúdo será aberto na mesma aba.-->
+
+<hr>
+
+<h3>Navegação externa.</h3>
+<a href="https://www.google.com/?hl=pt_BR" target="_blank">Acesse o site do google</a>
+
+<hr>
+<h3>Navegação interna.</h3>
+
+<a href="04-imagens.html">Saiba mais sobre imagens</a>
+
+<p>Obs.: Sempre que o navegador apontar para um site externo, utilizamos o protocolo
+    HTTPS. Caso a navegação seja interna, utilizamos apenas o nome ou indicamos o caminho do arquivo.
+</p>
+<hr>
+
+<h2>Explorando mais ideias com elemento de link</h2>
+<h3>Usando o elemento de link para download</h3>
+<a href="assets/foto-bolo.png" download >Baixe a imagem clicando aqui</a>
+
+<a href="" download="bolo">  Clique aqui   </a>
+
+<!-- As aspas no atributo "download" serve para nomearmos o arq baixado-->
+
+<!-- obs. CTRL + "barra de espaço" abre o caminho para você selecionar o arquivo -->
+
+<h3>Acessando aplicativos</h3>
+<p>
+    <!-- mail + to = Correspondência para... -->
+    <a href="mailto: framesframes562@gmail.com">Email: framesframes562@gmail.com</a>
+    </p>
+    <p>Acessando/abrindo o telefone</p>
+    <p>
+<a href="tel:+55">Celular: (11)97655-3886</a>
+    </p>
+
+    <p>
+<a href="https://wa.me/5511976553886">Entre em contato com a Frames</a>
+</p>
+
+<p>A tag <code>a</code></p> é um elemento do tipo <strong>inline</strong>
+<hr>
+
+<h3>Ponto importante, a seguir vemos um exemplo de uma foto com link, ou uma foto clicável, para nevegação.</h3>
+<a href="https://unsplash.com" target="_blank"> <img src="assets/folhas-azul-mobile.jpg" alt="" height="100" width="100"></a>
+
+
+
+
+<hr>
+
+<h2>Obs. Como adicionar uma imagem ao clicar no link </h2>
+
+<p>Exemplo.</p>
+<a href="assets/folhas-azul-desktop.jpg">Clique aqui</a>
+
+
+</body>
+</html>

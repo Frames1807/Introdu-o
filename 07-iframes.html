@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="br-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Iframest</title>
+</head>
+
+<body>
+    <h1>Conhecendo o elemento iframes</h1> <!--i = inline. Frame = quadro... iframes = Quadro imbutido-->
+    <p>O elemento <code>&lt;iframe&gt;</code> permite incorporar outra pág <strong>
+            HTML</strong></strong> dentro da pág atual.</p>
+
+    <h2>Criando o iframes do YouTube (embed)</h2>
+    <p>Para adicionar um video do youtube, encontre o video desejado, clica em "compartilhar", seleciona "
+        "Incorporar", copie o código vísivel ao lado direito, e cola em seu código.
+    </p>
+    <iframe width="400" height="250" src="https://www.youtube.com/embed/IECC4pBRUFE?si=Kllq_-0gIh4II-Io"
+        title="Video do canal Você sabia" frameborder="1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <hr>
+
+    <h2 style="color: rgb(213, 113, 42);">Adicionar um iframe de Maps</h2>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.646044663607!2d-46.64118992478902!3d-23.545229860999562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce56113b8aa18b%3A0x275b79f7efe44e1e!2sTheatro%20Municipal%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1780967478654!5m2!1spt-BR!2sbr"
+        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <hr>
+    <h2 style="color: rgb(94, 18, 166);">Exemplo com página interna </h2>
+    <iframe src="04-imagens.html" frameborder="1" width="550" height="300"></iframe>
+
+    <hr>
+    <h2>Galeria de imagens com iframes</h2>
+    <iframe src="assets/roxo-1.jpg" width="600" height="400" name="meuFrame"  style="object-fit: contain;"></iframe>
+    <a href="assets/roxo-1.jpg" target="meuFrame">Imagem 1  </a>
+    <a href="assets/roxo-2.jpg" target="meuFrame">Imagem 2  </a>
+    <a href="assets/roxo-3.jpg" target="meuFrame">Imagem 3  </a>
+
+
+
+
+</body>
+
+</html>

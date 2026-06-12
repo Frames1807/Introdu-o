@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com formulários</title>
+</head>
+
+<body>
+  <h1>Conhecendo o formulário</h1>
+  <hr>
+  <h2>Form</h2>
+  <p>No HTML, a tag <code> &lt;form&gt;</code>
+serve para coletar dados do usuário e enviá-los para algu destino,
+normalmente um servidor ou uma aplicação web.</p>
+
+<!-- O atributo action - define para onde os dados coletados serão enviados -->
+
+<form action="">
+<label for="">Nome</label>
+<input type="text" placeholder="Ex. Frames Frames">     <!--Placeholder - serve como texto temporário de exemplo para que o ususário saiba como preencher ou interagir com aquele campo-->
+<br>
+
+<label for="password">Senha</label>                     <!-- Label - esse element é responsável por identificar o campo de um formulário. Esse recurso diferente do placeholder é totalmente acessivel. -->
+<input type="password" placeholder="Digite a senha" id="password">  
+
+<br>
+<label for="confirmar-password">Confirmar senha</label>
+<input type="password" placeholder="Confirme sua senha" id="confirmar-password">
+</form>
+
+<button  type="submit">Enviar</button>
+
+<hr>
+
+<h2>Faça Login</h2>
+<form>
+    <label for="email">Email:</label> <br>
+    <input type="email" placeholder="seu@email.com" id="email">
+<br>
+
+<label for="login-password">Senha:</label> <br>
+<input type="password" placeholder="************" id="login-password">
+
+<button type="submit">Entrar</button>
+</form>
+
+<hr>
+<h2>Cadastre-se</h2>
+<form>
+    <label for="">Nome</label> <br>
+    <input type="text" placeholder="Ex: Débora França" id="name" required> <br>
+
+<label for="email">Email</label> <br>
+<input type="email" id="email" placeholder="frames@email.com"  required> <br>
+
+<label for="password">Senha (mínimo 6 caractéres)</label> <br>
+<input type="password" placeholder="********" id="password" required minlength="6">  <!-- "required" serve para tornar os campos obrigatórios, para que o usuário não envie algum campo vazio. "minlength" Serve para colocar a quantidade de letras ou numeros da regra específica, como exemplo para senha. -->
+<br>
+
+<label for="aceitar-termos">Li e aceito os termos</label>
+<input type="checkbox"  id="aceitar-termos" required> <br>
+
+<button type="submit">Cadastrar</button>
+
+</form>
+
+<!--  -->
+
+<!-- elemento "Input" - É utilizado para criar uma caixa onde o usuário poderá
+inserir a informação solicitada. Atributo "type" - É utilizado para definir o 
+tipo de campo ou comportamento do Input-->
+
+<hr>
+<h2>Testando outros recursos do formulário</h2>
+<form>
+
+    <input type="radio" id="html">
+    <label for="html">HTML</label><br>
+
+    
+    <input type="radio" id="css">
+    <label for="css">CSS</label><br>
+
+     <input type="radio" id="js">
+    <label for="js">JavaScript</label><br>
+
+   <label for="mensagem">Deixe sua mensagem</label><br> 
+   <textarea name="mensagem" id="mensagem"  placeholder="Olá, digite sua mensagem" rows="5"
+    cols="40"></textarea>  <br>
+
+    <input type="date">
+    <input type="month">
+</form>
+
+
+</body>
+</html>

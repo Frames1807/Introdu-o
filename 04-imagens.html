@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre imagens</title>
+</head>
+
+<body>
+
+  <h1>Conhecendo o elemento de imagens</h1>
+    
+  <hr>
+<h2>Sobre imagens</h2>
+<p>Trabalhar com imagens no <abbr title="HyperText Markup
+     Language">HTML</abbr> envolve muito mais do que apenas colocar uma foto na pág.</p>
+  <p>Existem várias formas técnicas e recursos para exibir, organizar, otimizar 
+    e adaptar imagens para diferentes dispositivos.</p>
+
+    <h3>Formatos mais comuns de imagens</h3>
+    <ul>
+<li><strong>JPEG/JPJ</strong>: Fotos e imagens compactadas</li>
+<li><strong>PNG</strong>: Suporta transparência</li>
+<li><strong>WEBp</strong>: Formato moderno e leve (também suporta transparência)</li>
+<li><strong>Gif</strong>: Animações simples</li>
+<li><strong>Avif</strong>: Excelente qualidade com um tamanho pequeno</li>
+    </ul>
+
+<hr>
+
+<h2>Sobre o elemento img</h2>
+  <p>A forma mais comum de inserir imagens no HTML é usando a tag img ( img src ="" alt="")</p>
+
+  <h3>Exemplo prático para adicionar imagem com links externos</h3>
+              
+  <img src="https://plus.unsplash.com/premium_photo-1711434824963-ca894373272e?q=
+  80&w=415&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  alt="" height="500">
+
+  <!-- src - Atributo responsável pelo caminho da imagem, ou seja, 
+    define onde está a imagem -->
+
+    <hr>
+
+<h4>Trabalhando com imagens locais também com img ( img src ="" alt="")</h4>
+<img src="assets/img-baixada2.jpg" alt="" height="400">
+
+<p>SRC (source / fonte) - Atributo responsável pelo caminho da imagem, ou seja, 
+    define onde está a imagem</p>
+
+<p>ALT (alternative/alternativo - É o texto alternativo que será apresentado
+    caso a imagem não carregue.</p>
+<p>O atributo alt é <strong>MUITO IMPORTANTE</strong></p>
+<ul>
+  <li>Acessibilidade</li>
+  <li>Leitores de telas</li>
+  <li>SEO</li>
+  <li>Fallback</li>
+</ul>
+
+<hr>
+<h4>Ajustando o tamanho das imagens</h4>
+<img src="https://images.unsplash.com/photo-1776389554587-4594c9f5aacd?q=
+80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG
+90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem da três dados empilhados" height="400" width="330">
+
+
+ <p>Quando tratamos de tamanho, usamos o <b>"height"</b> dentro de "alt" na tag da img, e quando tratamos de largura, usamos o <b>"width"</b></p>
+ <p><strong>HEIGHT</strong> esse atributo serve para ajustar o tamanho da altura da imagem</p>
+<p><strong>WIDTH</strong> esse atributo serve para ajustar o tamanho da largura da imagem</p>
+
+ <p>Lembrando quê, quando falamos de imagem, também falamos de <strong>pixels</strong>
+<br>
+ Os pixels (px) são uma unidade de medida usada para definir TAMANHOS e ESPAÇAMENTOS na interface</p>
+
+ <hr>
+
+ <h2>Trabalhando com imagens responsivas</h2>
+
+<p>O <cod>picture</cod> é um elemento do HTML usado para imagens
+<em>responsivas e adaptativas.</em></p>
+<p>Essa tag, permite o segunte:</p>
+<ul>
+  <li>Trocar a imagem conforme o <em>tamanho</em> da tela.</li>
+<li>Melhorar a performace</li>
+<li>Carregar imagens diferentes para mobile, tablet e desktop</li>
+</ul>
+
+ <picture>
+  <source srcset="assets/folhas-azul-mobile.jpg" media="(max-width: 600px)" type="image/jpg">
+  <source srcset="assets/folhas-azul-tablet.jpg" media="(max-width: 1024px)" type="image/jpg">
+  
+  <!-- Img como fallback - o fallback é basicamente um plano B, ou seja, algo que entra entra
+  em ação quando a opção principal não funciona -->
+  
+  <img src="assets/folhas-azul-desktop.jpg" alt="" height="400" width="700">
+ </picture>
+
+<p> Dentro da tag "picture" usamos o "source" e dentro dele inserimos o atributo "srcset". </p>
+ <p><strong>srcset</strong> - Serve para oferecer múltiplas versões de uma mídia e deixar o navegar
+  escolher a mais adequada conforme o tamanho da tela, formato suportado, largura dísponível e performace.</p>
+
+  <h2>Voltar para pág de links</h2>
+  <a href="05-link.html">Clique aqui</a>
+</body>
+</html>
